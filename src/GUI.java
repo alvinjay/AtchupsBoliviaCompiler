@@ -10,17 +10,15 @@ import java.io.*;
 
 
 /**
- * DISCLAIMER: NO OOP YET
- *
  * Description:
  *  -GUI Form Class
- *  -includes all file handling methods (temporary)
+ *
  */
 public class GUI extends JFrame implements ActionListener, KeyListener
 {
-    private JTextArea jta;
+    public JTextArea jta;
+    public JMenuBar mbar;
     private JScrollPane jscroll;
-    private JMenuBar mbar;
 
     private FileHandler fileHandler;
     private CurrentFile currentFile;

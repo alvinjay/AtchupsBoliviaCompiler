@@ -8,6 +8,11 @@ import java.io.*;
 /**
  * Created by alvinjay on 3/2/15.
  */
+
+/**
+ * Description:
+ *  - includes methods for handling file operations (open, save, write, exit)
+ */
 public class FileHandler {
 
     private CurrentFile currentFile;
@@ -18,6 +23,9 @@ public class FileHandler {
         this.currentFile = currentFile;
     }
 
+    /**
+     * Method called when user decides to exit IDE
+     */
     public void fileExit()
     {
         if(currentFile.isModified())
@@ -36,6 +44,9 @@ public class FileHandler {
         System.exit(0);
     }
 
+    /**
+     * Method called when user wants to open a file
+     */
     public void fileOpen()
     {
         gui.jta.setEnabled(true);
@@ -81,6 +92,9 @@ public class FileHandler {
         }
     }
 
+    /**
+     * Method called when user decides to save changes done to currently opened file
+     */
     public void fileSave()
     {
         if(currentFile.getFilename().equals(""))
@@ -100,6 +114,9 @@ public class FileHandler {
             fileWrite();
     }
 
+    /**
+     * Method called within fileSave(), overwrites the existing file in file directory
+     */
     public void fileWrite()
     {
         try

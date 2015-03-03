@@ -6,6 +6,11 @@
 /**
  * Created by alvinjay on 3/2/15.
  */
+
+/**
+ * Description:
+ *  - class responsible for representing the currently opened file in the IDE
+ */
 public class CurrentFile {
     String filename, content;
     boolean modified = false;

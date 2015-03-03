@@ -28,6 +28,9 @@ public class Menu {
         initMenu();
     }
 
+    /**
+     * Initialize menu bar GUI components
+     */
     public void initMenu() {
         file = new JMenu("File");
         edit = new JMenu("Edit");
