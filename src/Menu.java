@@ -15,12 +15,17 @@ import javax.swing.*;
  */
 public class Menu {
 
-    JMenuBar mbar;
-    JMenu file, edit;
-    JMenuItem newFile, exit, open, save, saveAs;
-    JMenuItem cut , copy, paste, selall, del;
+    private JMenuBar mbar;
+    /* Menubar tabs */
+    public JMenu file, edit, run;
+    /* File Tab options */
+    public JMenuItem newFile, exit, open, save, saveAs;
+    /* Edit Tab options */
+    public JMenuItem cut , copy, paste, selall, del;
+    /* Run Tab options */
+    public JMenuItem compileRun, runOnly;
 
-    GUI gui;
+    private GUI gui;
 
     public Menu(GUI gui, JMenuBar mbar) {
         this.gui = gui;
@@ -31,24 +36,28 @@ public class Menu {
     /**
      * Initialize menu bar GUI components
      */
-    public void initMenu() {
+    private void initMenu() {
+        initFileTab();
+        initEditTab();
+        initRunTab();
+
+        gui.setJMenuBar(mbar);
+        gui.setVisible(true);
+    }
+
+    /**
+     * Initialize "File" tab in menu bar
+     */
+    private void initFileTab() {
         file = new JMenu("File");
-        edit = new JMenu("Edit");
 
         file.setMnemonic('F');
-        edit.setMnemonic('E');
 
         newFile = new JMenuItem("New");
         open = new JMenuItem("Open");
         save = new JMenuItem("Save");
         saveAs = new JMenuItem("Save As...");
         exit = new JMenuItem("Exit");
-
-        cut = new JMenuItem("Cut");
-        copy = new JMenuItem("Copy");
-        paste = new JMenuItem("Paste");
-        selall = new JMenuItem("Select all");
-        del = new JMenuItem("Delete");
 
         file.add(newFile);
         file.add(open);
@@ -57,27 +66,11 @@ public class Menu {
         file.addSeparator();
         file.add(exit);
 
-        edit.add(cut);
-        edit.add(copy);
-        edit.add(paste);
-        edit.addSeparator();
-        edit.add(selall);
-        edit.add(del);
-
-        mbar.add(file);
-        mbar.add(edit);
-
         newFile.addActionListener(gui);
         open.addActionListener(gui);
         save.addActionListener(gui);
         saveAs.addActionListener(gui);
         exit.addActionListener(gui);
-
-        cut.addActionListener(gui);
-        copy.addActionListener(gui);
-        paste.addActionListener(gui);
-        selall.addActionListener(gui);
-        del.addActionListener(gui);
 
         KeyStroke k ;
 
@@ -93,9 +86,60 @@ public class Menu {
         k = KeyStroke.getKeyStroke('S', java.awt.event.InputEvent.CTRL_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK);
         saveAs.setAccelerator(k);
 
-        gui.setJMenuBar(mbar);
-        gui.setVisible(true);
+        mbar.add(file);
     }
 
+    /**
+     * Initialize "Edit" tab in menu bar
+     */
+    private void initEditTab() {
+        edit = new JMenu("Edit");
+
+        edit.setMnemonic('E');
+
+        cut = new JMenuItem("Cut");
+        copy = new JMenuItem("Copy");
+        paste = new JMenuItem("Paste");
+        selall = new JMenuItem("Select all");
+        del = new JMenuItem("Delete");
+
+        edit.add(cut);
+        edit.add(copy);
+        edit.add(paste);
+        edit.addSeparator();
+        edit.add(selall);
+        edit.add(del);
+
+        cut.addActionListener(gui);
+        copy.addActionListener(gui);
+        paste.addActionListener(gui);
+        selall.addActionListener(gui);
+        del.addActionListener(gui);
+
+        mbar.add(edit);
+    }
+
+    /**
+     * Initialize "Run" tab in menu bar
+     */
+    private void initRunTab() {
+        run = new JMenu("Run");
+
+        run.setMnemonic('E');
+
+        compileRun = new JMenuItem("Compile and Run");
+        runOnly = new JMenuItem("Run");
+
+//        runOnly.setEnabled(false);
+//        compileRun.setEnabled(false);
+
+        run.add(compileRun);
+        run.add(runOnly);
+
+        compileRun.addActionListener(gui);
+        runOnly.addActionListener(gui);
+
+        mbar.add(run);
+    }
 
 }
