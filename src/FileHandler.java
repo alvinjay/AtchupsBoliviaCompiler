@@ -24,27 +24,6 @@ public class FileHandler {
     }
 
     /**
-     * Method called when user decides to exit IDE
-     */
-    public void fileExit()
-    {
-        if(currentFile.isModified())
-        {
-            int res;
-            res = JOptionPane.showConfirmDialog(gui, "Do You Want to Save Changes", "File Exit", JOptionPane.YES_NO_CANCEL_OPTION);
-            if(res == JOptionPane.YES_OPTION)
-            {
-                fileSave();
-            }
-            else if(res == JOptionPane.CANCEL_OPTION)
-            {
-                return;
-            }
-        }
-        System.exit(0);
-    }
-
-    /**
      * Method called when user wants to open a file
      */
     public void fileOpen()
@@ -73,8 +52,10 @@ public class FileHandler {
 
                 while( (data=br.readLine()) != null)
                 {
-                    gui.jta.append(data);
+                    gui.jta.append(data + "\n");
                 }
+
+                currentFile.setContent(gui.jta.getText());
 
                 currentFile.setFilename(f.getAbsolutePath());
                 br.close();
@@ -112,6 +93,8 @@ public class FileHandler {
         }
         else
             fileWrite();
+
+        currentFile.setContent(gui.jta.getText());
     }
 
     /**
@@ -137,5 +120,26 @@ public class FileHandler {
                     );
         }
 
+    }
+
+    /**
+     * Method called when user decides to exit IDE
+     */
+    public void fileExit()
+    {
+        if(currentFile.isModified())
+        {
+            int res;
+            res = JOptionPane.showConfirmDialog(gui, "Do You Want to Save Changes", "File Exit", JOptionPane.YES_NO_CANCEL_OPTION);
+            if(res == JOptionPane.YES_OPTION)
+            {
+                fileSave();
+            }
+            else if(res == JOptionPane.CANCEL_OPTION)
+            {
+                return;
+            }
+        }
+        System.exit(0);
     }
 }

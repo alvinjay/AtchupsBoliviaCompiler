@@ -23,7 +23,7 @@ public class Menu {
     /* Edit Tab options */
     public JMenuItem cut , copy, paste, selall, del;
     /* Run Tab options */
-    public JMenuItem compileRun, runOnly;
+    public JMenuItem compile, compileExecute, execute;
 
     private GUI gui;
 
@@ -125,19 +125,22 @@ public class Menu {
     private void initRunTab() {
         run = new JMenu("Run");
 
-        run.setMnemonic('E');
+        run.setMnemonic('R');
 
-        compileRun = new JMenuItem("Compile and Run");
-        runOnly = new JMenuItem("Run");
+        compile = new JMenuItem("Compile");
+        compileExecute = new JMenuItem("Compile and Execute");
+        execute = new JMenuItem("Execute");
 
 //        runOnly.setEnabled(false);
 //        compileRun.setEnabled(false);
 
-        run.add(compileRun);
-        run.add(runOnly);
+        run.add(compile);
+        run.add(compileExecute);
+        run.add(execute);
 
-        compileRun.addActionListener(gui);
-        runOnly.addActionListener(gui);
+        compile.addActionListener(gui);
+        compileExecute.addActionListener(gui);
+        execute.addActionListener(gui);
 
         mbar.add(run);
     }

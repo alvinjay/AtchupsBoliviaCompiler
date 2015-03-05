@@ -3,6 +3,8 @@
     Exercise 2: Atchups Bolivia Compiler, Date Due: February 27, 2015
 */
 
+import COMPILER.LexicalAnalyzer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -23,6 +25,10 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     private FileHandler fileHandler;
     private CurrentFile currentFile;
     private Menu menu;
+
+    private LexicalAnalyzer lex;
+
+    private DefaultListModel lexemesListModel = new DefaultListModel();
 
     public GUI()
     {
@@ -85,6 +91,23 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         {
             fileHandler.fileExit();
         }
+        else if(e.getSource().equals(menu.compile))
+        {
+            if(currentFile.isModified())
+               fileHandler.fileSave();
+
+            lex = new LexicalAnalyzer(currentFile.getContent());
+            lex.analyze();
+            setLexemes(lex.getLexemes());
+        }
+        else if(e.getSource().equals(menu.compileExecute))
+        {
+
+        }
+        else if(e.getSource().equals(menu.execute))
+        {
+
+        }
     }
 
     /**
@@ -101,11 +124,12 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
+        jList2 = new javax.swing.JList(lexemesListModel);
         jScrollPane4 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList();
         jta.setFont(new Font("Consolas", Font.PLAIN, 12));
         jta.addKeyListener(this);
+
 
         jscroll = new JScrollPane(jta);
         add(jscroll, BorderLayout.CENTER );
@@ -127,11 +151,6 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         jScrollPane2.setViewportView(jList1);
 
         jList2.setBackground(new java.awt.Color(153, 102, 255));
-        jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane3.setViewportView(jList2);
 
         jList3.setBackground(new java.awt.Color(0, 204, 204));
@@ -176,6 +195,25 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void setLexemes(String[] lexemes) {
+        lexemesListModel.clear();
+        for (int i = 0; i < lexemes.length; i++) {
+            lexemesListModel.addElement(lexemes[i]);
+        }
+    }
+
+    private void showSaveDialog() {
+        int res;
+        res = JOptionPane.showConfirmDialog(this, "Do You Want to Save Changes", "File Exit", JOptionPane.YES_NO_CANCEL_OPTION);
+        if(res == JOptionPane.YES_OPTION)
+        {
+            fileHandler.fileSave();
+        }
+        else if(res == JOptionPane.CANCEL_OPTION)
+        {
+            return;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList jList1;
     private javax.swing.JList jList2;
