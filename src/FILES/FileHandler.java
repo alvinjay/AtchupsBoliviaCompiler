@@ -1,7 +1,10 @@
-/*
+package FILES;/*
     Programmers: Alvin Jay Cosare, Gabriel Lagmay, Raphael Tugasan
-    Exercise 2: Atchups Bolivia Compiler, Date Due: February 27, 2015
+    Exercise 2: Atchups Bolivia COMPILER.Compiler, Date Due: February 27, 2015
 */
+import FILES.CurrentFile;
+import INTERFACE.GUI;
+
 import javax.swing.*;
 import java.io.*;
 

@@ -1,12 +1,14 @@
-/*
+package INTERFACE;/*
     Programmers: Alvin Jay Cosare, Gabriel Lagmay, Raphael Tugasan
-    Exercise 2: Atchups Bolivia Compiler, Date Due: February 27, 2015
+    Exercise 2: Atchups Bolivia COMPILER.Compiler, Date Due: February 27, 2015
 */
+
+import FILES.CurrentFile;
+import FILES.FileHandler;
+import COMPILER.Compiler;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
 
 /**
  * Created by alvinjay on 3/2/15.
@@ -45,7 +47,7 @@ public class Menu {
     }
 
     /**
-     * Initialize menu bar GUI components
+     * Initialize menu bar INTERFACE.GUI components
      */
     private void initMenu() {
         initFileTab();

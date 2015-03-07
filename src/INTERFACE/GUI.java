@@ -1,9 +1,11 @@
-/*
+package INTERFACE;/*
     Programmers: Alvin Jay Cosare, Gabriel Lagmay, Raphael Tugasan
-    Exercise 2: Atchups Bolivia Compiler, Date Due: February 27, 2015
+    Exercise 2: Atchups Bolivia COMPILER.Compiler, Date Due: February 27, 2015
 */
 
-import ANALYZERS.LexicalAnalyzer;
+import COMPILER.ANALYZERS.LexicalAnalyzer;
+import FILES.CurrentFile;
+import FILES.FileHandler;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -14,7 +16,7 @@ import java.util.*;
 
 /**
  * Description:
- *  -GUI Form Class
+ *  -INTERFACE.GUI Form Class
  *
  */
 public class GUI extends JFrame implements ActionListener, KeyListener
@@ -45,7 +47,6 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
         currentFile = new CurrentFile();
         fileHandler = new FileHandler(this, currentFile);
-        lex = new LexicalAnalyzer();
         menu = new Menu(this, mbar, currentFile, fileHandler);
     }
 

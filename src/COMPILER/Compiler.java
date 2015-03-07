@@ -1,6 +1,10 @@
-import ANALYZERS.LexicalAnalyzer;
-import ANALYZERS.SemanticAnalyzer;
-import ANALYZERS.SyntaxAnalyzer;
+package COMPILER;
+
+import COMPILER.ANALYZERS.LexicalAnalyzer;
+import COMPILER.ANALYZERS.SemanticAnalyzer;
+import COMPILER.ANALYZERS.SyntaxAnalyzer;
+import COMPILER.DATA.Variable;
+import FILES.CurrentFile;
 
 import java.util.HashMap;
 
@@ -16,20 +20,23 @@ public class Compiler {
     private CurrentFile currentFile;
 
     private HashMap<String, String> lexemesTokens;
+    private HashMap<String, Variable> variables;
+
 
     public Compiler(CurrentFile currentFile) {
         this.currentFile = currentFile;
-        lex = new LexicalAnalyzer();
+
+        lexemesTokens = new HashMap<String, String>();
+
+        lex = new LexicalAnalyzer(lexemesTokens, variables);
         syn = new SyntaxAnalyzer();
         sem =  new SemanticAnalyzer();
     }
 
     public void start() {
-        lexemesTokens = new HashMap<String, String>();
-
         String code = currentFile.getContent();
 
-        lexemesTokens = lex.analyze(code);
+        lex.analyze(code);
         //syn.analyze(code, lexemesTokens) //TODO syntax analysis
         //sem.analyze(code, lexemeTokens)//TODO semantic analysis
     }

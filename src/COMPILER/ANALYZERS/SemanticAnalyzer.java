@@ -1,4 +1,4 @@
-package ANALYZERS;
+package COMPILER.ANALYZERS;
 
 /**
  * Created by alvinjay on 3/7/15.
