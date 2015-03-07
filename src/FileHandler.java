@@ -80,21 +80,25 @@ public class FileHandler {
     {
         if(currentFile.getFilename().equals(""))
         {
-            JFileChooser jfc = new JFileChooser();
-            jfc.setFileSelectionMode(jfc.DIRECTORIES_ONLY);
-
-            int res = jfc.showSaveDialog(gui);
-            if(res == jfc.APPROVE_OPTION)
-            {
-                File f = jfc.getSelectedFile();
-                currentFile.setFilename(f.getAbsolutePath());
-                fileWrite();
-            }
+            fileSaveAs();
         }
         else
             fileWrite();
 
         currentFile.setContent(gui.jta.getText());
+    }
+
+    public void fileSaveAs() {
+        JFileChooser jfc = new JFileChooser();
+        jfc.setFileSelectionMode(jfc.DIRECTORIES_ONLY);
+
+        int res = jfc.showSaveDialog(gui);
+        if(res == jfc.APPROVE_OPTION)
+        {
+            File f = jfc.getSelectedFile();
+            currentFile.setFilename(f.getAbsolutePath());
+            fileWrite();
+        }
     }
 
     /**

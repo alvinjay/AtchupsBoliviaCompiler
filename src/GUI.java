@@ -3,12 +3,15 @@
     Exercise 2: Atchups Bolivia Compiler, Date Due: February 27, 2015
 */
 
-import COMPILER.LexicalAnalyzer;
+import ANALYZERS.LexicalAnalyzer;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 
 
 /**
@@ -34,9 +37,10 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     {
         mbar = new JMenuBar();
         initComponents();
-        menu = new Menu(this, mbar);
         currentFile = new CurrentFile();
         fileHandler = new FileHandler(this, currentFile);
+        lex = new LexicalAnalyzer();
+        menu = new Menu(this, mbar, currentFile, fileHandler);
     }
 
     public void keyPressed(KeyEvent e){}
@@ -48,65 +52,10 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getSource().equals(menu.cut) )
-        {
-            jta.cut();
-        }
-        else if(e.getSource().equals(menu.copy))
-        {
-            jta.copy();
-        }
-        else if(e.getSource().equals(menu.paste))
-        {
-            jta.paste();
-        }
-        else if(e.getSource().equals(menu.selall))
-        {
-            jta.selectAll();
-        }
-        else if(e.getSource().equals(menu.del))
-        {
-            jta.replaceSelection("");
-        }
-        else if(e.getSource().equals(menu.newFile))
-        {
-            currentFile.setFilename("");
-            currentFile.setModified(false);
-            jta.setText("");
-            jta.setEnabled(true);
-        }
-        else if(e.getSource().equals(menu.open))
-        {
-            fileHandler.fileOpen();
-        }
-        else if(e.getSource().equals(menu.save))
-        {
-            fileHandler.fileSave();
-        }
-        else if(e.getSource().equals(menu.saveAs))
-        {
-            fileHandler.fileSave();
-        }
-        else if(e.getSource().equals(menu.exit))
-        {
-            fileHandler.fileExit();
-        }
-        else if(e.getSource().equals(menu.compile))
-        {
-            if(currentFile.isModified())
-               fileHandler.fileSave();
-
-            lex = new LexicalAnalyzer(currentFile.getContent());
-            lex.analyze();
-            setLexemes(lex.getLexemes());
-        }
-        else if(e.getSource().equals(menu.compileExecute))
-        {
-
-        }
-        else if(e.getSource().equals(menu.execute))
-        {
-
+        if (!menu.fileTabActionListener(e)) {
+            if (!menu.editTabActionListener(e)) {
+                menu.runTabActionListener(e);
+            }
         }
     }
 
@@ -195,13 +144,23 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void setLexemes(String[] lexemes) {
+    /**
+     * Displays the lexemes in the editor
+     * @param lexemesTokens
+     */
+    public void setLexemesTokens(HashMap<String, String> lexemesTokens) {
         lexemesListModel.clear();
-        for (int i = 0; i < lexemes.length; i++) {
-            lexemesListModel.addElement(lexemes[i]);
+
+
+        Iterator iterator = lexemesTokens.entrySet().iterator(); //Format [KEY1=VALUE1, KEY2=VALUE2, ...]
+        while(iterator.hasNext()) {
+            lexemesListModel.addElement(iterator.next().toString().replace("=", " -> "));
         }
     }
 
+    /**
+     * Displays a save file dialog
+     */
     private void showSaveDialog() {
         int res;
         res = JOptionPane.showConfirmDialog(this, "Do You Want to Save Changes", "File Exit", JOptionPane.YES_NO_CANCEL_OPTION);

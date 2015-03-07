@@ -4,6 +4,9 @@
 */
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  * Created by alvinjay on 3/2/15.
@@ -26,10 +29,18 @@ public class Menu {
     public JMenuItem compile, compileExecute, execute;
 
     private GUI gui;
+    private CurrentFile currentFile;
+    private FileHandler fileHandler;
 
-    public Menu(GUI gui, JMenuBar mbar) {
+    private Compiler compiler;
+
+    public Menu(GUI gui, JMenuBar mbar, CurrentFile currentFile, FileHandler fileHandler) {
         this.gui = gui;
         this.mbar = mbar;
+        this.currentFile = currentFile;
+        this.fileHandler = fileHandler;
+
+        compiler = new Compiler(currentFile);
         initMenu();
     }
 
@@ -145,4 +156,88 @@ public class Menu {
         mbar.add(run);
     }
 
+    public boolean fileTabActionListener(ActionEvent e) {
+        if(e.getSource().equals(newFile))
+        {
+            currentFile.setFilename("");
+            currentFile.setModified(false);
+            gui.jta.setText("");
+            gui.jta.setEnabled(true);
+        }
+        else if(e.getSource().equals(open))
+        {
+            fileHandler.fileOpen();
+        }
+        else if(e.getSource().equals(save))
+        {
+            fileHandler.fileSave();
+        }
+        else if(e.getSource().equals(saveAs))
+        {
+            fileHandler.fileSaveAs();
+        }
+        else if(e.getSource().equals(exit))
+        {
+            fileHandler.fileExit();
+        } else {
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean editTabActionListener(ActionEvent e) {
+        if(e.getSource().equals(cut) )
+        {
+            gui.jta.cut();
+        }
+        else if(e.getSource().equals(copy))
+        {
+            gui.jta.copy();
+        }
+        else if(e.getSource().equals(paste))
+        {
+            gui.jta.paste();
+        }
+        else if(e.getSource().equals(selall))
+        {
+            gui.jta.selectAll();
+        }
+        else if(e.getSource().equals(del))
+        {
+            gui.jta.replaceSelection("");
+        } else {
+            return false;
+        }
+
+        return true;
+    }
+
+    public void runTabActionListener(ActionEvent e) {
+        if (e.getSource().equals(compile)) {
+            //save file if modified
+            if (currentFile.isModified())
+                fileHandler.fileSave();
+
+            //check if is new/empty file
+            if (!currentFile.getFilename().equals(null)) {
+                compiler.start();
+                gui.setLexemesTokens(compiler.getLexemesTokens());
+            }
+
+        } else if (e.getSource().equals(compileExecute)) {
+            //save file if modified
+            if (currentFile.isModified())
+                fileHandler.fileSave();
+
+            //check if is new/empty file
+            if (!currentFile.getFilename().equals(null)) {
+                compiler.start();
+                gui.setLexemesTokens(compiler.getLexemesTokens());
+            }
+            //TODO execute function
+        } else if (e.getSource().equals(execute)) {
+
+        }
+    }
 }
