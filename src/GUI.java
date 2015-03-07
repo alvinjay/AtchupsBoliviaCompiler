@@ -6,12 +6,10 @@
 import ANALYZERS.LexicalAnalyzer;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 
 /**
@@ -31,12 +29,20 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
     private LexicalAnalyzer lex;
 
-    private DefaultListModel lexemesListModel = new DefaultListModel();
+    private Vector columnIdentifiers;
+    private DefaultTableModel lexemesTokensTableModel;
 
     public GUI()
     {
         mbar = new JMenuBar();
+
+        columnIdentifiers = new Vector();
+        columnIdentifiers.add("Lexeme"); columnIdentifiers.add("Token");
+        lexemesTokensTableModel = new DefaultTableModel();
+        lexemesTokensTableModel.setColumnIdentifiers(columnIdentifiers);
+
         initComponents();
+
         currentFile = new CurrentFile();
         fileHandler = new FileHandler(this, currentFile);
         lex = new LexicalAnalyzer();
@@ -73,11 +79,14 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList(lexemesListModel);
         jScrollPane4 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList();
         jta.setFont(new Font("Consolas", Font.PLAIN, 12));
         jta.addKeyListener(this);
+
+
+        lexemesTokensTableModel.setColumnIdentifiers(columnIdentifiers);
+        lexemesTokensTable = new JTable(lexemesTokensTableModel);
 
 
         jscroll = new JScrollPane(jta);
@@ -99,8 +108,8 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         });
         jScrollPane2.setViewportView(jList1);
 
-        jList2.setBackground(new java.awt.Color(153, 102, 255));
-        jScrollPane3.setViewportView(jList2);
+        lexemesTokensTable.setBackground(new java.awt.Color(153, 102, 255));
+        jScrollPane3.setViewportView(lexemesTokensTable);
 
         jList3.setBackground(new java.awt.Color(0, 204, 204));
         jList3.setModel(new javax.swing.AbstractListModel() {
@@ -149,13 +158,15 @@ public class GUI extends JFrame implements ActionListener, KeyListener
      * @param lexemesTokens
      */
     public void setLexemesTokens(HashMap<String, String> lexemesTokens) {
-        lexemesListModel.clear();
-
+        lexemesTokensTableModel.setDataVector(null, columnIdentifiers);
 
         Iterator iterator = lexemesTokens.entrySet().iterator(); //Format [KEY1=VALUE1, KEY2=VALUE2, ...]
+
         while(iterator.hasNext()) {
-            lexemesListModel.addElement(iterator.next().toString().replace("=", " -> "));
+            lexemesTokensTableModel.addRow(iterator.next().toString().split("="));
         }
+
+
     }
 
     /**
@@ -175,7 +186,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
+    private javax.swing.JTable lexemesTokensTable;
     private javax.swing.JList jList3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

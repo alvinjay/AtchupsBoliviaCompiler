@@ -12,7 +12,7 @@ public class LexicalAnalyzer {
     public HashMap<String, String> analyze(String code) {
         input = sanitizeCode(code);
         lexemes = extractLexemes(input);
-        return assignTokensToLexemes(lexemes);
+        return tokenize(lexemes);
     }
 
     private String sanitizeCode(String code) {
@@ -23,13 +23,13 @@ public class LexicalAnalyzer {
         return input.split(" ");
     }
 
-    private HashMap<String, String> assignTokensToLexemes(String[] lexemes) {
+    private HashMap<String, String> tokenize(String[] lexemes) {
         HashMap<String, String> lexemesTokens = new HashMap<String, String>();
 
         for (int i = 0; i < lexemes.length; i++) {
             //TODO determine what kind of token for lexeme
             //sample lexeme -> token: var_name -> <id>(Identifier)
-            lexemesTokens.put(lexemes[i], "aw");
+            lexemesTokens.put(lexemes[i], null);
             //TODO put lexeme as KEY and token as VALUE in lexemesTokens HashMap
         }
 
