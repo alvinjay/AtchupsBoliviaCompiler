@@ -2,7 +2,6 @@ package FILES;/*
     Programmers: Alvin Jay Cosare, Gabriel Lagmay, Raphael Tugasan
     Exercise 2: Atchups Bolivia COMPILER.Compiler, Date Due: February 27, 2015
 */
-import FILES.CurrentFile;
 import INTERFACE.GUI;
 
 import javax.swing.*;
@@ -18,10 +17,10 @@ import java.io.*;
  */
 public class FileHandler {
 
-    private CurrentFile currentFile;
+    private IOLFile currentFile;
     private GUI gui;
 
-    public FileHandler(GUI gui, CurrentFile currentFile) {
+    public FileHandler(GUI gui, IOLFile currentFile) {
         this.gui = gui;
         this.currentFile = currentFile;
     }
@@ -31,7 +30,7 @@ public class FileHandler {
      */
     public void fileOpen()
     {
-        gui.jta.setEnabled(true);
+        gui.textEditor.setEnabled(true);
 
         JFileChooser jfc = new JFileChooser();
         jfc.setFileSelectionMode(jfc.FILES_ONLY);
@@ -51,14 +50,14 @@ public class FileHandler {
                 BufferedReader br = new BufferedReader(fr);
 
                 String data;
-                gui.jta.setText("");
+                gui.textEditor.setText("");
 
                 while( (data=br.readLine()) != null)
                 {
-                    gui.jta.append(data + "\n");
+                    gui.textEditor.append(data + "\n");
                 }
 
-                currentFile.setContent(gui.jta.getText());
+                currentFile.setContent(gui.textEditor.getText());
 
                 currentFile.setFilename(f.getAbsolutePath());
                 br.close();
@@ -88,7 +87,7 @@ public class FileHandler {
         else
             fileWrite();
 
-        currentFile.setContent(gui.jta.getText());
+        currentFile.setContent(gui.textEditor.getText());
     }
 
     public void fileSaveAs() {
@@ -113,7 +112,7 @@ public class FileHandler {
         {
             FileWriter fw = new FileWriter(currentFile.getFilename());
 
-            fw.write(gui.jta.getText());
+            fw.write(gui.textEditor.getText());
             fw.flush();
             fw.close();
             currentFile.setModified(false);

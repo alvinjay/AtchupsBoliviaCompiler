@@ -4,7 +4,7 @@ import COMPILER.ANALYZERS.LexicalAnalyzer;
 import COMPILER.ANALYZERS.SemanticAnalyzer;
 import COMPILER.ANALYZERS.SyntaxAnalyzer;
 import COMPILER.DATA.Variable;
-import FILES.CurrentFile;
+import FILES.IOLFile;
 
 import java.util.HashMap;
 
@@ -17,13 +17,13 @@ public class Compiler {
     private SyntaxAnalyzer syn;
     private SemanticAnalyzer sem;
 
-    private CurrentFile currentFile;
+    private IOLFile currentFile;
 
     private HashMap<String, String> lexemesTokens;
     private HashMap<String, Variable> variables;
 
 
-    public Compiler(CurrentFile currentFile) {
+    public Compiler(IOLFile currentFile) {
         this.currentFile = currentFile;
 
         lexemesTokens = new HashMap<String, String>();

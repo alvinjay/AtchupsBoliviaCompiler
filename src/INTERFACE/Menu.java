@@ -3,9 +3,9 @@ package INTERFACE;/*
     Exercise 2: Atchups Bolivia COMPILER.Compiler, Date Due: February 27, 2015
 */
 
-import FILES.CurrentFile;
 import FILES.FileHandler;
 import COMPILER.Compiler;
+import FILES.IOLFile;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -31,12 +31,12 @@ public class Menu {
     public JMenuItem compile, compileExecute, execute;
 
     private GUI gui;
-    private CurrentFile currentFile;
+    private IOLFile currentFile;
     private FileHandler fileHandler;
 
     private Compiler compiler;
 
-    public Menu(GUI gui, JMenuBar mbar, CurrentFile currentFile, FileHandler fileHandler) {
+    public Menu(GUI gui, JMenuBar mbar, IOLFile currentFile, FileHandler fileHandler) {
         this.gui = gui;
         this.mbar = mbar;
         this.currentFile = currentFile;
@@ -161,10 +161,10 @@ public class Menu {
     public boolean fileTabActionListener(ActionEvent e) {
         if(e.getSource().equals(newFile))
         {
-            currentFile.setFilename("");
-            currentFile.setModified(false);
-            gui.jta.setText("");
-            gui.jta.setEnabled(true);
+            currentFile = new IOLFile(gui.IOLFiles.size(), "", "", "");
+            currentFile.textEditor.addKeyListener(gui);
+            gui.IOLFiles.add(currentFile);
+            gui.jTabbedPane.add(currentFile.getFilename(), currentFile.getTextEditor());
         }
         else if(e.getSource().equals(open))
         {
@@ -191,23 +191,23 @@ public class Menu {
     public boolean editTabActionListener(ActionEvent e) {
         if(e.getSource().equals(cut) )
         {
-            gui.jta.cut();
+            gui.textEditor.cut();
         }
         else if(e.getSource().equals(copy))
         {
-            gui.jta.copy();
+            gui.textEditor.copy();
         }
         else if(e.getSource().equals(paste))
         {
-            gui.jta.paste();
+            gui.textEditor.paste();
         }
         else if(e.getSource().equals(selall))
         {
-            gui.jta.selectAll();
+            gui.textEditor.selectAll();
         }
         else if(e.getSource().equals(del))
         {
-            gui.jta.replaceSelection("");
+            gui.textEditor.replaceSelection("");
         } else {
             return false;
         }

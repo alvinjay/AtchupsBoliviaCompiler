@@ -4,8 +4,7 @@ package INTERFACE;/*
 */
 
 import COMPILER.ANALYZERS.LexicalAnalyzer;
-import FILES.CurrentFile;
-import FILES.FileHandler;
+import FILES.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -21,12 +20,13 @@ import java.util.*;
  */
 public class GUI extends JFrame implements ActionListener, KeyListener
 {
-    public JTextArea jta;
+    public ArrayList<IOLFile> IOLFiles;
+    public JTextArea textEditor;
     public JMenuBar mbar;
     private JScrollPane jscroll;
 
     private FileHandler fileHandler;
-    private CurrentFile currentFile;
+    private IOLFile currentFile;
     private Menu menu;
 
     private LexicalAnalyzer lex;
@@ -36,6 +36,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
     public GUI()
     {
+        IOLFiles = new ArrayList<IOLFile>();
         mbar = new JMenuBar();
 
         columnIdentifiers = new Vector();
@@ -45,7 +46,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
 
         initComponents();
 
-        currentFile = new CurrentFile();
+        currentFile = new IOLFile();
         fileHandler = new FileHandler(this, currentFile);
         menu = new Menu(this, mbar, currentFile, fileHandler);
     }
@@ -55,6 +56,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     public void keyTyped(KeyEvent e)
     {
         currentFile.setModified(true);
+        jTabbedPane.setTitleAt(currentFile.getIndex(), currentFile.getFilename() + "*");
     }
 
     public void actionPerformed(ActionEvent e)
@@ -75,31 +77,34 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jta = new javax.swing.JTextArea();
+        jTabbedPane = new javax.swing.JTabbedPane(JTabbedPane.TOP, JTabbedPane.WRAP_TAB_LAYOUT);
+        textEditor = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jScrollPane3 = new javax.swing.JScrollPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList();
-        jta.setFont(new Font("Consolas", Font.PLAIN, 12));
-        jta.addKeyListener(this);
+        textEditor.setFont(new Font("Consolas", Font.PLAIN, 12));
+        textEditor.addKeyListener(this);
 
 
         lexemesTokensTableModel.setColumnIdentifiers(columnIdentifiers);
         lexemesTokensTable = new JTable(lexemesTokensTableModel);
 
 
-        jscroll = new JScrollPane(jta);
-        add(jscroll, BorderLayout.CENTER );
+        jscroll = new JScrollPane(textEditor);
+        add(jscroll, BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jta.setText("No opened file");
-        jta.setEnabled(false);
-        jta.setColumns(20);
-        jta.setRows(5);
-        jScrollPane1.setViewportView(jta);
+        textEditor.setText("No opened file");
+        textEditor.setEnabled(false);
+        textEditor.setColumns(20);
+        textEditor.setRows(5);
+//        jTabbedPane.add("New File1", new javax.swing.JTextArea());
+//        jTabbedPane.add("New File2", new javax.swing.JTextArea());
+//        jTabbedPane.add("New File3", new javax.swing.JTextArea());
+//        jTabbedPane.setViewportView(textEditor);
 
         jList1.setBackground(new java.awt.Color(255, 153, 51));
         jList1.setModel(new javax.swing.AbstractListModel() {
@@ -127,7 +132,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, 0)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                                        .addComponent(jTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
                                         .addComponent(jScrollPane2))
                                 .addGap(0, 0, 0)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -145,7 +150,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
                                                 .addGap(0, 0, 0)
                                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jScrollPane1)
+                                                .addComponent(jTabbedPane)
                                                 .addGap(0, 0, 0)
                                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, 0))
@@ -189,7 +194,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     private javax.swing.JList jList1;
     private javax.swing.JTable lexemesTokensTable;
     private javax.swing.JList jList3;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
