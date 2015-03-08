@@ -36,13 +36,12 @@ public class Menu {
 
     private Compiler compiler;
 
-    public Menu(GUI gui, JMenuBar mbar, IOLFile currentFile, FileHandler fileHandler) {
+    public Menu(GUI gui, JMenuBar mbar, FileHandler fileHandler) {
         this.gui = gui;
         this.mbar = mbar;
-        this.currentFile = currentFile;
         this.fileHandler = fileHandler;
 
-        compiler = new Compiler(currentFile);
+        compiler = new Compiler();
         initMenu();
     }
 
@@ -162,22 +161,44 @@ public class Menu {
         if(e.getSource().equals(newFile))
         {
             currentFile = new IOLFile(gui.IOLFiles.size(), "", "", ""); //create an empty IOL File
-            currentFile.textEditor.addKeyListener(gui); //set keylistener to gui keylisteners
-            gui.IOLFiles.add(currentFile); //add new IOLFile to IOLFiles arraylist
-            gui.jTabbedPane.add(currentFile.getFilename(), currentFile.getTextEditor()); //add text editor to tabs
-            gui.jTabbedPane.setSelectedIndex(currentFile.getIndex()); //focus newly created file
+            addCurrentFile(currentFile);
+            prepareCurrentFile(currentFile);
         }
         else if(e.getSource().equals(open))
         {
-            fileHandler.fileOpen();
+            currentFile = fileHandler.fileOpen();
+            //check if error occured
+            if (!currentFile.equals(null)) {
+                if (!gui.IOLFiles.contains(currentFile))
+                    addCurrentFile(currentFile);
+                prepareCurrentFile(currentFile);
+            }
         }
         else if(e.getSource().equals(save))
         {
-            fileHandler.fileSave();
+            IOLFile savedAsFile = fileHandler.fileSave();
+
+           try {
+               savedAsFile.equals(null); //check if null, throws exception to catch if null
+               addCurrentFile(savedAsFile);
+               prepareCurrentFile(savedAsFile);
+               setCurrentFile(savedAsFile);
+            }
+            catch(NullPointerException exception) {} finally {
+               gui.jTabbedPane.setTitleAt(currentFile.getIndex(), currentFile.getFilename());
+           }
         }
         else if(e.getSource().equals(saveAs))
         {
-            fileHandler.fileSaveAs();
+            IOLFile savedAsFile = fileHandler.fileSaveAs();
+            try {
+                savedAsFile.equals(null); //check if null, throws exception to catch if null
+                addCurrentFile(savedAsFile);
+                prepareCurrentFile(savedAsFile);
+                setCurrentFile(savedAsFile);
+                gui.jTabbedPane.setTitleAt(currentFile.getIndex(), currentFile.getFilename());
+            }
+            catch(NullPointerException exception) {}
         }
         else if(e.getSource().equals(exit))
         {
@@ -220,10 +241,11 @@ public class Menu {
         if (e.getSource().equals(compile)) {
             //save file if modified
             if (currentFile.isModified())
-                fileHandler.fileSave();
+                save.doClick();
 
             //check if is new/empty file
-            if (!currentFile.getFilename().equals(null)) {
+            if (!currentFile.getFilename().equals("New File")) {
+                compiler.setFile(currentFile);
                 compiler.start();
                 gui.setLexemesTokens(compiler.getLexemesTokens());
             }
@@ -242,5 +264,22 @@ public class Menu {
         } else if (e.getSource().equals(execute)) {
 
         }
+    }
+
+    private void prepareCurrentFile(IOLFile currentFile) {
+        currentFile.textEditor.addKeyListener(gui); //set keylistener to gui keylisteners
+        gui.jTabbedPane.setSelectedIndex(currentFile.getIndex()); //focus newly created/opened file file
+    }
+
+    private void addCurrentFile(IOLFile currentFile) {
+        gui.IOLFiles.add(currentFile); //add new IOLFile to IOLFiles arraylist
+        gui.jTabbedPane.add(currentFile.getFilename(), currentFile.getTextEditor()); //add text editor to tabs
+    }
+
+    public void setCurrentFile(IOLFile currentFile) {
+        System.out.println(currentFile.getIndex());
+        this.currentFile = currentFile;
+        fileHandler.setCurrentFile(currentFile);
+        compiler.setFile(currentFile);
     }
 }

@@ -1,12 +1,15 @@
-package INTERFACE;/*
+/*
     Programmers: Alvin Jay Cosare, Gabriel Lagmay, Raphael Tugasan
     Exercise 2: Atchups Bolivia COMPILER.Compiler, Date Due: February 27, 2015
 */
+package INTERFACE;
 
-import COMPILER.ANALYZERS.LexicalAnalyzer;
+
 import FILES.*;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
@@ -18,7 +21,7 @@ import java.util.*;
  *  -INTERFACE.GUI Form Class
  *
  */
-public class GUI extends JFrame implements ActionListener, KeyListener
+public class GUI extends JFrame implements ActionListener, KeyListener, ChangeListener
 {
     public ArrayList<IOLFile> IOLFiles;
     public JTextArea textEditor;
@@ -29,14 +32,13 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     private IOLFile currentFile;
     private Menu menu;
 
-    private LexicalAnalyzer lex;
-
     private Vector columnIdentifiers;
     private DefaultTableModel lexemesTokensTableModel;
 
     public GUI()
     {
         IOLFiles = new ArrayList<IOLFile>();
+
         mbar = new JMenuBar();
 
         columnIdentifiers = new Vector();
@@ -47,8 +49,8 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         initComponents();
 
         currentFile = new IOLFile();
-        fileHandler = new FileHandler(this, currentFile);
-        menu = new Menu(this, mbar, currentFile, fileHandler);
+        fileHandler = new FileHandler(this, IOLFiles);
+        menu = new Menu(this, mbar, fileHandler);
     }
 
     public void keyPressed(KeyEvent e){}
@@ -66,6 +68,12 @@ public class GUI extends JFrame implements ActionListener, KeyListener
                 menu.runTabActionListener(e);
             }
         }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        currentFile = IOLFiles.get(jTabbedPane.getSelectedIndex());
+        menu.setCurrentFile(currentFile);
     }
 
     /**
@@ -87,6 +95,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
         textEditor.setFont(new Font("Consolas", Font.PLAIN, 12));
         textEditor.addKeyListener(this);
 
+        jTabbedPane.addChangeListener(this);
 
         lexemesTokensTableModel.setColumnIdentifiers(columnIdentifiers);
         lexemesTokensTable = new JTable(lexemesTokensTableModel);
@@ -198,5 +207,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+
+
     // End of variables declaration//GEN-END:variables
 }

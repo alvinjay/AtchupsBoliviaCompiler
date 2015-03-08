@@ -17,15 +17,13 @@ public class Compiler {
     private SyntaxAnalyzer syn;
     private SemanticAnalyzer sem;
 
-    private IOLFile currentFile;
+    private IOLFile file;
 
     private HashMap<String, String> lexemesTokens;
     private HashMap<String, Variable> variables;
 
 
-    public Compiler(IOLFile currentFile) {
-        this.currentFile = currentFile;
-
+    public Compiler() {
         lexemesTokens = new HashMap<String, String>();
 
         lex = new LexicalAnalyzer(lexemesTokens, variables);
@@ -34,7 +32,7 @@ public class Compiler {
     }
 
     public void start() {
-        String code = currentFile.getContent();
+        String code = file.getContent();
 
         lex.analyze(code);
         //syn.analyze(code, lexemesTokens) //TODO syntax analysis
@@ -43,5 +41,10 @@ public class Compiler {
 
     public HashMap<String, String> getLexemesTokens() {
         return lexemesTokens;
+    }
+
+    public void setFile(IOLFile currentFile) {
+        this.file = currentFile;
+        lexemesTokens.clear();
     }
 }

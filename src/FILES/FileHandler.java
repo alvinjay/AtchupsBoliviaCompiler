@@ -6,6 +6,7 @@ import INTERFACE.GUI;
 
 import javax.swing.*;
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Created by alvinjay on 3/2/15.
@@ -17,21 +18,23 @@ import java.io.*;
  */
 public class FileHandler {
 
-    private IOLFile currentFile;
+    private ArrayList<IOLFile> IOLFiles;
+    private IOLFile openedFile, currentFile;
     private GUI gui;
 
-    public FileHandler(GUI gui, IOLFile currentFile) {
+    public FileHandler(GUI gui, ArrayList<IOLFile> IOLFiles) {
         this.gui = gui;
-        this.currentFile = currentFile;
+        this.IOLFiles = IOLFiles;
+        openedFile = new IOLFile();
     }
 
     /**
      * Method called when user wants to open a file
      */
-    public void fileOpen()
+    public IOLFile fileOpen()
     {
-        gui.textEditor.setEnabled(true);
-
+        currentFile = new IOLFile();
+        
         JFileChooser jfc = new JFileChooser();
         jfc.setFileSelectionMode(jfc.FILES_ONLY);
 
@@ -44,25 +47,30 @@ public class FileHandler {
         if(res == jfc.APPROVE_OPTION)
         {
             File f = jfc.getSelectedFile();
+
+            //check if file selected is already loaded
+            int result = fileExistsInArrayList(f.getAbsolutePath());
+            if(result != -1) { //if already exists then
+                return IOLFiles.get(result); //return the existing file instead
+            }
             try
             {
                 FileReader fr = new FileReader(f);
                 BufferedReader br = new BufferedReader(fr);
 
-                String data;
-                gui.textEditor.setText("");
-
-                while( (data=br.readLine()) != null)
+                //read input string from file
+                String data = "", line;
+                while( (line=br.readLine()) != null)
                 {
-                    gui.textEditor.append(data + "\n");
+                    data += line + "\n";
                 }
 
-                currentFile.setContent(gui.textEditor.getText());
+                openedFile = new IOLFile(IOLFiles.size(), f.getAbsolutePath(), f.getName(), data);
 
-                currentFile.setFilename(f.getAbsolutePath());
                 br.close();
                 fr.close();
 
+                return openedFile;
             }
             catch(IOException e)
             {
@@ -73,24 +81,29 @@ public class FileHandler {
                         );
             }
         }
+
+        return null;
     }
 
     /**
      * Method called when user decides to save changes done to currently opened file
      */
-    public void fileSave()
+    public IOLFile fileSave()
     {
-        if(currentFile.getFilename().equals(""))
+        if(currentFile.getFilename().equals("New File"))
         {
-            fileSaveAs();
+            return fileSaveAs();
         }
-        else
+        else {
             fileWrite();
+        }
 
-        currentFile.setContent(gui.textEditor.getText());
+        currentFile.setContent(currentFile.textEditor.getText());
+
+        return null;
     }
 
-    public void fileSaveAs() {
+    public IOLFile fileSaveAs() {
         JFileChooser jfc = new JFileChooser();
         jfc.setFileSelectionMode(jfc.DIRECTORIES_ONLY);
 
@@ -98,9 +111,12 @@ public class FileHandler {
         if(res == jfc.APPROVE_OPTION)
         {
             File f = jfc.getSelectedFile();
-            currentFile.setFilename(f.getAbsolutePath());
+            currentFile = new IOLFile(IOLFiles.size(), f.getAbsolutePath(), f.getName(), currentFile.textEditor.getText());
             fileWrite();
+            return currentFile;
         }
+
+        return null;
     }
 
     /**
@@ -110,9 +126,9 @@ public class FileHandler {
     {
         try
         {
-            FileWriter fw = new FileWriter(currentFile.getFilename());
+            FileWriter fw = new FileWriter(currentFile.getPath());
 
-            fw.write(gui.textEditor.getText());
+            fw.write(currentFile.textEditor.getText());
             fw.flush();
             fw.close();
             currentFile.setModified(false);
@@ -147,5 +163,22 @@ public class FileHandler {
             }
         }
         System.exit(0);
+    }
+
+    /**
+     * Checks if the filename of the file newly opened is already loaded in IDE
+     * @param filePath - location of file in file directory
+     * @return index of file if already loaded, else return -1
+     */
+    private int fileExistsInArrayList(String filePath) {
+        for (int i = 0; i < IOLFiles.size(); i++) {
+            if (IOLFiles.get(i).getPath().equals(filePath))
+                return i;
+        }
+        return -1;
+    }
+
+    public void setCurrentFile(IOLFile currentFile) {
+        this.currentFile = currentFile;
     }
 }
