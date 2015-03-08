@@ -111,9 +111,21 @@ public class FileHandler {
         if(res == jfc.APPROVE_OPTION)
         {
             File f = jfc.getSelectedFile();
-            currentFile = new IOLFile(IOLFiles.size(), f.getAbsolutePath(), f.getName(), currentFile.textEditor.getText());
-            fileWrite();
-            return currentFile;
+
+            //check if saveAs filename is opened in IDE
+            if (fileExistsInArrayList(f.getAbsolutePath()) == -1) {
+                currentFile = new IOLFile(IOLFiles.size(), f.getAbsolutePath(), f.getName(), currentFile.textEditor.getText());
+                fileWrite();
+                return currentFile;
+            }
+            else { //prompt user that file is opened in IDE
+                JOptionPane.showMessageDialog
+                        (
+                                gui , "File is opened in IDE. Try saving with a different filename" , "File SaveAs Error",
+                                JOptionPane.ERROR_MESSAGE
+                        );
+            }
+
         }
 
         return null;
