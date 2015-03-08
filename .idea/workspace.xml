@@ -31,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/INTERFACE/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9251337" vertical-offset="606" max-vertical-offset="1764">
+            <state vertical-scroll-proportion="-12.444445" vertical-offset="616" max-vertical-offset="1764">
               <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#GUI#0" expanded="false" />
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/INTERFACE/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1135" max-vertical-offset="2352">
-              <caret line="164" column="55" selection-start-line="164" selection-start-column="55" selection-end-line="164" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.30193236" vertical-offset="1191" max-vertical-offset="2380">
+              <caret line="163" column="98" selection-start-line="163" selection-start-column="98" selection-end-line="163" selection-end-column="98" />
               <folding>
                 <element signature="docComment;class#Menu#0" expanded="false" />
                 <element signature="method#Menu#0;class#Menu#0" expanded="false" />
@@ -102,7 +102,7 @@
       <file leaf-file-name="IOLFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FILES/IOLFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="1708">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1708">
               <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
               <folding>
                 <element signature="e#726#727#0" expanded="true" />
@@ -162,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/FILES/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/COMPILER/Compiler.java" />
         <option value="$PROJECT_DIR$/src/FILES/IOLFile.java" />
-        <option value="$PROJECT_DIR$/src/INTERFACE/Menu.java" />
         <option value="$PROJECT_DIR$/src/INTERFACE/GUI.java" />
+        <option value="$PROJECT_DIR$/src/INTERFACE/Menu.java" />
       </list>
     </option>
   </component>
@@ -709,12 +709,12 @@
       <workItem from="1425364048957" duration="855000" />
       <workItem from="1425532711836" duration="6508000" />
       <workItem from="1425719970255" duration="11709000" />
-      <workItem from="1425796402329" duration="2995000" />
+      <workItem from="1425796402329" duration="3341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37872000" />
+    <option name="totallyTimeSpent" value="38218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="6" />
@@ -1348,42 +1348,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FILES/IOLFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="911" max-vertical-offset="1708">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding>
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/INTERFACE/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1135" max-vertical-offset="2352">
-          <caret line="164" column="55" selection-start-line="164" selection-start-column="55" selection-end-line="164" selection-end-column="55" />
-          <folding>
-            <element signature="docComment;class#Menu#0" expanded="false" />
-            <element signature="method#Menu#0;class#Menu#0" expanded="false" />
-            <element signature="docComment;method#initMenu#0;class#Menu#0" expanded="false" />
-            <element signature="method#initMenu#0;class#Menu#0" expanded="false" />
-            <element signature="docComment;method#initFileTab#0;class#Menu#0" expanded="false" />
-            <element signature="method#initFileTab#0;class#Menu#0" expanded="false" />
-            <element signature="docComment;method#initEditTab#0;class#Menu#0" expanded="false" />
-            <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
-            <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3748#3784#0" expanded="false" />
-            <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/INTERFACE/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9251337" vertical-offset="606" max-vertical-offset="1764">
+        <state vertical-scroll-proportion="-12.444445" vertical-offset="616" max-vertical-offset="1764">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
@@ -1402,6 +1369,39 @@
             <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FILES/IOLFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1708">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding>
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/INTERFACE/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30193236" vertical-offset="1191" max-vertical-offset="2380">
+          <caret line="163" column="98" selection-start-line="163" selection-start-column="98" selection-end-line="163" selection-end-column="98" />
+          <folding>
+            <element signature="docComment;class#Menu#0" expanded="false" />
+            <element signature="method#Menu#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initMenu#0;class#Menu#0" expanded="false" />
+            <element signature="method#initMenu#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initFileTab#0;class#Menu#0" expanded="false" />
+            <element signature="method#initFileTab#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initEditTab#0;class#Menu#0" expanded="false" />
+            <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
+            <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
+            <element signature="e#3748#3784#0" expanded="false" />
+            <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
       </provider>

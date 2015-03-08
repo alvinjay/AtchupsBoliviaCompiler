@@ -161,10 +161,11 @@ public class Menu {
     public boolean fileTabActionListener(ActionEvent e) {
         if(e.getSource().equals(newFile))
         {
-            currentFile = new IOLFile(gui.IOLFiles.size(), "", "", "");
-            currentFile.textEditor.addKeyListener(gui);
-            gui.IOLFiles.add(currentFile);
-            gui.jTabbedPane.add(currentFile.getFilename(), currentFile.getTextEditor());
+            currentFile = new IOLFile(gui.IOLFiles.size(), "", "", ""); //create an empty IOL File
+            currentFile.textEditor.addKeyListener(gui); //set keylistener to gui keylisteners
+            gui.IOLFiles.add(currentFile); //add new IOLFile to IOLFiles arraylist
+            gui.jTabbedPane.add(currentFile.getFilename(), currentFile.getTextEditor()); //add text editor to tabs
+            gui.jTabbedPane.setSelectedIndex(currentFile.getIndex()); //focus newly created file
         }
         else if(e.getSource().equals(open))
         {
