@@ -31,26 +31,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/INTERFACE/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.333333" vertical-offset="867" max-vertical-offset="1904">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5229202" vertical-offset="1680" max-vertical-offset="2716">
+              <caret line="190" column="72" selection-start-line="190" selection-start-column="72" selection-end-line="190" selection-end-column="72" />
               <folding>
                 <element signature="docComment;class#GUI#0" expanded="false" />
                 <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+                <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
                 <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+                <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
                 <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
                 <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-                <element signature="e#3444#3512#0" expanded="false" />
-                <element signature="class#3795:4052" expanded="false" />
-                <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-                <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-                <element signature="class#4329:4586" expanded="false" />
-                <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-                <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
                 <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-                <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
                 <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
                 <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
               </folding>
@@ -61,8 +55,8 @@
       <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/INTERFACE/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="3164">
-              <caret line="159" column="56" selection-start-line="159" selection-start-column="56" selection-end-line="159" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="2716">
+              <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#Menu#0" expanded="false" />
                 <element signature="method#Menu#0;class#Menu#0" expanded="false" />
@@ -74,11 +68,17 @@
                 <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
                 <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
                 <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-                <element signature="e#3676#3712#0" expanded="false" />
+                <element signature="e#3768#3804#0" expanded="false" />
+                <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+                <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+                <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
                 <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-                <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+                <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+                <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
                 <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+                <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
                 <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+                <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
                 <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
               </folding>
             </state>
@@ -88,11 +88,13 @@
       <file leaf-file-name="IOLFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FILES/IOLFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1023" max-vertical-offset="1708">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="1512">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="e#759#760#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#IOLFile#0" expanded="false" />
+                <element signature="method#IOLFile#0;class#IOLFile#0" expanded="false" />
+                <element signature="method#getFilename#0;class#IOLFile#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -101,30 +103,56 @@
       <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/COMPILER/Compiler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1023" max-vertical-offset="1512">
-              <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="980">
+              <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Compiler#0" expanded="false" />
+                <element signature="method#Compiler#0;class#Compiler#0" expanded="false" />
+                <element signature="method#start#0;class#Compiler#0" expanded="false" />
+                <element signature="e#904#961#0" expanded="false" />
+                <element signature="e#1212#1213#0" expanded="true" />
+                <element signature="method#setFile#0;class#Compiler#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LexicalAnalyzer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/COMPILER/ANALYZERS/LexicalAnalyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="1540">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#LexicalAnalyzer#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FILES/FileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30213904" vertical-offset="1483" max-vertical-offset="3108">
-              <caret line="123" column="114" selection-start-line="123" selection-start-column="114" selection-end-line="123" selection-end-column="114" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1372">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
               <folding>
                 <element signature="docComment;class#FileHandler#0" expanded="false" />
                 <element signature="method#FileHandler#0;class#FileHandler#0" expanded="false" />
                 <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
                 <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
                 <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
+                <element signature="method#fileSave#0;class#FileHandler#0" expanded="false" />
+                <element signature="docComment;method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+                <element signature="method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
                 <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
+                <element signature="method#fileWrite#0;class#FileHandler#0" expanded="false" />
                 <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
                 <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
                 <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+                <element signature="method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+                <element signature="docComment;method#setCurrentFile#0;class#FileHandler#0" expanded="false" />
+                <element signature="docComment;method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+                <element signature="method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -152,14 +180,15 @@
         <option value="$PROJECT_DIR$/src/DATA/Variable.java" />
         <option value="$PROJECT_DIR$/src/Compiler.java" />
         <option value="$PROJECT_DIR$/src/ANALYZERS/LexicalAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/COMPILER/ANALYZERS/LexicalAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/asdsad.form" />
         <option value="$PROJECT_DIR$/src/FILES/CurrentFile.java" />
+        <option value="$PROJECT_DIR$/src/FILES/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/FILES/IOLFile.java" />
         <option value="$PROJECT_DIR$/src/COMPILER/Compiler.java" />
-        <option value="$PROJECT_DIR$/src/INTERFACE/GUI.java" />
         <option value="$PROJECT_DIR$/src/INTERFACE/Menu.java" />
-        <option value="$PROJECT_DIR$/src/FILES/FileHandler.java" />
+        <option value="$PROJECT_DIR$/src/COMPILER/ANALYZERS/LexicalAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/COMPILER/DATA/Variable.java" />
+        <option value="$PROJECT_DIR$/src/INTERFACE/GUI.java" />
       </list>
     </option>
   </component>
@@ -301,6 +330,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS129Lab2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS129Lab2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COMPILER" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DATA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS129Lab2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS129Lab2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COMPILER" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ANALYZERS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -313,7 +386,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="editing.templates" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -705,12 +778,13 @@
       <workItem from="1425364048957" duration="855000" />
       <workItem from="1425532711836" duration="6508000" />
       <workItem from="1425719970255" duration="11709000" />
-      <workItem from="1425796402329" duration="11192000" />
+      <workItem from="1425796402329" duration="11242000" />
+      <workItem from="1425861481249" duration="5318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46069000" />
+    <option name="totallyTimeSpent" value="51437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="6" />
@@ -722,7 +796,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39878234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -738,10 +811,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32724506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32724506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -772,6 +846,110 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/INTERFACE/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1904">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#GUI#0" expanded="false" />
+            <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
+            <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
+            <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
+            <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
+            <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/INTERFACE/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="3164">
+          <caret line="159" column="56" selection-start-line="159" selection-start-column="56" selection-end-line="159" selection-end-column="56" />
+          <folding>
+            <element signature="docComment;class#Menu#0" expanded="false" />
+            <element signature="method#Menu#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initMenu#0;class#Menu#0" expanded="false" />
+            <element signature="method#initMenu#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initFileTab#0;class#Menu#0" expanded="false" />
+            <element signature="method#initFileTab#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initEditTab#0;class#Menu#0" expanded="false" />
+            <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
+            <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FILES/IOLFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1023" max-vertical-offset="1708">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#IOLFile#0" expanded="false" />
+            <element signature="method#IOLFile#0;class#IOLFile#0" expanded="false" />
+            <element signature="method#getFilename#0;class#IOLFile#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/COMPILER/Compiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1023" max-vertical-offset="1512">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <element signature="docComment;class#Compiler#0" expanded="false" />
+            <element signature="method#Compiler#0;class#Compiler#0" expanded="false" />
+            <element signature="method#start#0;class#Compiler#0" expanded="false" />
+            <element signature="e#904#961#0" expanded="false" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="method#setFile#0;class#Compiler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FILES/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#FileHandler#0" expanded="false" />
+            <element signature="method#FileHandler#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/COMPILER/ANALYZERS/LexicalAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="859" max-vertical-offset="1568">
@@ -805,11 +983,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -820,7 +1004,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="1484">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Compiler#0" expanded="false" />
+            <element signature="method#Compiler#0;class#Compiler#0" expanded="false" />
+            <element signature="method#start#0;class#Compiler#0" expanded="false" />
+            <element signature="e#904#961#0" expanded="false" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="method#setFile#0;class#Compiler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -832,18 +1021,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -860,10 +1043,18 @@
             <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileWrite#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -893,11 +1084,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -910,18 +1107,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -943,11 +1134,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -960,18 +1157,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -993,11 +1184,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -1010,18 +1207,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -1043,11 +1234,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -1063,10 +1260,18 @@
             <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileWrite#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1078,18 +1283,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -1111,11 +1310,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -1131,10 +1336,18 @@
             <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileWrite#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1146,18 +1359,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -1179,11 +1386,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -1199,10 +1412,18 @@
             <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileWrite#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
             <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1214,18 +1435,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -1247,11 +1462,17 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -1271,18 +1492,12 @@
           <folding>
             <element signature="docComment;class#GUI#0" expanded="false" />
             <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
             <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
             <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
             <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
             <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
@@ -1329,54 +1544,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/COMPILER/ANALYZERS/LexicalAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3147854" vertical-offset="883" max-vertical-offset="1512">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-          <folding>
-            <element signature="docComment;class#LexicalAnalyzer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/asdsad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="308">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/COMPILER/DATA/Variable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74396133" vertical-offset="0" max-vertical-offset="896">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/INTERFACE/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.333333" vertical-offset="867" max-vertical-offset="1904">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#GUI#0" expanded="false" />
-            <element signature="method#GUI#0;class#GUI#0" expanded="false" />
-            <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
-            <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
-            <element signature="e#3444#3512#0" expanded="false" />
-            <element signature="class#3795:4052" expanded="false" />
-            <element signature="method#getSize#0;class#3795:4052" expanded="false" />
-            <element signature="method#getElementAt#0;class#3795:4052" expanded="false" />
-            <element signature="class#4329:4586" expanded="false" />
-            <element signature="method#getSize#0;class#4329:4586" expanded="false" />
-            <element signature="method#getElementAt#0;class#4329:4586" expanded="false" />
-            <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="method#setLexemesTokens#0;class#GUI#0" expanded="false" />
-            <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
-            <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1384,35 +1555,89 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3537234" vertical-offset="18963" max-vertical-offset="23744">
           <caret line="721" column="0" selection-start-line="721" selection-start-column="0" selection-end-line="721" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FILES/IOLFile.java">
+    <entry file="file://$PROJECT_DIR$/src/FILES/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1708">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1372">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding>
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
+            <element signature="docComment;class#FileHandler#0" expanded="false" />
+            <element signature="method#FileHandler#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSave#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileSaveAs#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileWrite#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+            <element signature="method#showFileErrorDialog#0;class#FileHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/COMPILER/DATA/Variable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0238473" vertical-offset="0" max-vertical-offset="952">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/COMPILER/ANALYZERS/LexicalAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="1540">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#LexicalAnalyzer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/COMPILER/Compiler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="1512">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="454" max-vertical-offset="980">
+          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding>
+            <element signature="docComment;class#Compiler#0" expanded="false" />
+            <element signature="method#Compiler#0;class#Compiler#0" expanded="false" />
+            <element signature="method#start#0;class#Compiler#0" expanded="false" />
+            <element signature="e#904#961#0" expanded="false" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="method#setFile#0;class#Compiler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FILES/IOLFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="1512">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;class#IOLFile#0" expanded="false" />
+            <element signature="method#IOLFile#0;class#IOLFile#0" expanded="false" />
+            <element signature="method#getFilename#0;class#IOLFile#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/INTERFACE/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="3164">
-          <caret line="159" column="56" selection-start-line="159" selection-start-column="56" selection-end-line="159" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="2716">
+          <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Menu#0" expanded="false" />
             <element signature="method#Menu#0;class#Menu#0" expanded="false" />
@@ -1424,30 +1649,37 @@
             <element signature="method#initEditTab#0;class#Menu#0" expanded="false" />
             <element signature="docComment;method#initRunTab#0;class#Menu#0" expanded="false" />
             <element signature="method#initRunTab#0;class#Menu#0" expanded="false" />
-            <element signature="e#3676#3712#0" expanded="false" />
+            <element signature="e#3768#3804#0" expanded="false" />
+            <element signature="docComment;method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="method#fileTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#editTabActionListener#0;class#Menu#0" expanded="false" />
             <element signature="method#editTabActionListener#0;class#Menu#0" expanded="false" />
-            <element signature="method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#runTabActionListener#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#prepareCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#addCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#addCurrentFile#0;class#Menu#0" expanded="false" />
+            <element signature="docComment;method#setCurrentFile#0;class#Menu#0" expanded="false" />
             <element signature="method#setCurrentFile#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FILES/FileHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/INTERFACE/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30213904" vertical-offset="1483" max-vertical-offset="3108">
-          <caret line="123" column="114" selection-start-line="123" selection-start-column="114" selection-end-line="123" selection-end-column="114" />
+        <state vertical-scroll-proportion="0.5229202" vertical-offset="1680" max-vertical-offset="2716">
+          <caret line="190" column="72" selection-start-line="190" selection-start-column="72" selection-end-line="190" selection-end-column="72" />
           <folding>
-            <element signature="docComment;class#FileHandler#0" expanded="false" />
-            <element signature="method#FileHandler#0;class#FileHandler#0" expanded="false" />
-            <element signature="docComment;method#fileOpen#0;class#FileHandler#0" expanded="false" />
-            <element signature="method#fileOpen#0;class#FileHandler#0" expanded="false" />
-            <element signature="docComment;method#fileSave#0;class#FileHandler#0" expanded="false" />
-            <element signature="docComment;method#fileWrite#0;class#FileHandler#0" expanded="false" />
-            <element signature="docComment;method#fileExit#0;class#FileHandler#0" expanded="false" />
-            <element signature="method#fileExit#0;class#FileHandler#0" expanded="false" />
-            <element signature="docComment;method#fileExistsInArrayList#0;class#FileHandler#0" expanded="false" />
+            <element signature="docComment;class#GUI#0" expanded="false" />
+            <element signature="method#GUI#0;class#GUI#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GUI#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#GUI#0" expanded="false" />
+            <element signature="method#stateChanged#0;class#GUI#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#GUI#0" expanded="false" />
+            <element signature="method#initComponents#0;class#GUI#0" expanded="false" />
+            <element signature="docComment;method#setLexemesTokens#0;class#GUI#0" expanded="false" />
+            <element signature="docComment;method#showSaveDialog#0;class#GUI#0" expanded="false" />
+            <element signature="method#showSaveDialog#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>

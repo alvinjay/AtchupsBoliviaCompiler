@@ -4,12 +4,12 @@ package COMPILER.DATA;
  * Created by alvinjay on 3/7/15.
  */
 public class Variable {
-    private String name, value, type;
+    private String name, type, value;
 
     public Variable(String name, String value, String type) {
         this.name = name;
-        this.value = value;
         this.type = type;
+        this.value = value;
     }
 
     public boolean isCompatibleWith(Variable a) {

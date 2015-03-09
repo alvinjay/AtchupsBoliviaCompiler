@@ -6,6 +6,7 @@ package INTERFACE;
 
 
 import FILES.*;
+import COMPILER.DATA.Variable;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -21,19 +22,24 @@ import java.util.*;
  *  -INTERFACE.GUI Form Class
  *
  */
-public class GUI extends JFrame implements ActionListener, KeyListener, ChangeListener
-{
+public class GUI extends JFrame implements ActionListener, KeyListener, ChangeListener {
+/* ArrayList that contains all opened IOL files */
     public ArrayList<IOLFile> IOLFiles;
-    public JTextArea textEditor;
+/* GUI Menu Bar */
     public JMenuBar mbar;
-    private JScrollPane jscroll;
 
+    private JScrollPane jscroll;
+/* File Handler class */
     private FileHandler fileHandler;
+/* Represents the currently focused file in the IDE */
     private IOLFile currentFile;
+/* Menu Class */
     private Menu menu;
 
-    private Vector columnIdentifiers;
-    private DefaultTableModel lexemesTokensTableModel;
+/* Table Headers for lexeme-token and variables panes */
+    private Vector LEXEMES_TOKENS_TABLE_HEADERS, VARIABLES_TABLE_HEADERS;
+/* Tables Models for lexeme-token and variables tables */
+    private DefaultTableModel lexemesTokensTableModel, variablesTableModel;
 
     public GUI()
     {
@@ -41,10 +47,11 @@ public class GUI extends JFrame implements ActionListener, KeyListener, ChangeLi
 
         mbar = new JMenuBar();
 
-        columnIdentifiers = new Vector();
-        columnIdentifiers.add("Lexeme"); columnIdentifiers.add("Token");
-        lexemesTokensTableModel = new DefaultTableModel();
-        lexemesTokensTableModel.setColumnIdentifiers(columnIdentifiers);
+        LEXEMES_TOKENS_TABLE_HEADERS = new Vector();
+        LEXEMES_TOKENS_TABLE_HEADERS.add("Lexeme"); LEXEMES_TOKENS_TABLE_HEADERS.add("Token");
+
+        VARIABLES_TABLE_HEADERS = new Vector();
+        VARIABLES_TABLE_HEADERS.add("Name"); VARIABLES_TABLE_HEADERS.add("Type"); VARIABLES_TABLE_HEADERS.add("Initial Value");
 
         initComponents();
 
@@ -86,53 +93,37 @@ public class GUI extends JFrame implements ActionListener, KeyListener, ChangeLi
     private void initComponents() {
 
         jTabbedPane = new javax.swing.JTabbedPane(JTabbedPane.TOP, JTabbedPane.WRAP_TAB_LAYOUT);
-        textEditor = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jScrollPane3 = new javax.swing.JScrollPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList();
-        textEditor.setFont(new Font("Consolas", Font.PLAIN, 12));
-        textEditor.addKeyListener(this);
 
         jTabbedPane.addChangeListener(this);
 
-        lexemesTokensTableModel.setColumnIdentifiers(columnIdentifiers);
+        lexemesTokensTableModel = new DefaultTableModel();
+        lexemesTokensTableModel.setColumnIdentifiers(LEXEMES_TOKENS_TABLE_HEADERS);
         lexemesTokensTable = new JTable(lexemesTokensTableModel);
 
+        variablesTableModel = new DefaultTableModel();
+        variablesTableModel.setColumnIdentifiers(VARIABLES_TABLE_HEADERS);
+        variablesTable = new JTable(variablesTableModel);
 
-        jscroll = new JScrollPane(textEditor);
+
+        jscroll = new JScrollPane();
         add(jscroll, BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        textEditor.setText("No opened file");
-        textEditor.setEnabled(false);
-        textEditor.setColumns(20);
-        textEditor.setRows(5);
-//        jTabbedPane.add("New File1", new javax.swing.JTextArea());
-//        jTabbedPane.add("New File2", new javax.swing.JTextArea());
-//        jTabbedPane.add("New File3", new javax.swing.JTextArea());
-//        jTabbedPane.setViewportView(textEditor);
-
         jList1.setBackground(new java.awt.Color(255, 153, 51));
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane2.setViewportView(jList1);
 
         lexemesTokensTable.setBackground(new java.awt.Color(153, 102, 255));
+        jScrollPane3.setPreferredSize(new Dimension(100, 100));
         jScrollPane3.setViewportView(lexemesTokensTable);
 
-        jList3.setBackground(new java.awt.Color(0, 204, 204));
-        jList3.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(jList3);
+        variablesTable.setBackground(new java.awt.Color(0, 204, 204));
+        jScrollPane4.setViewportView(variablesTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,7 +136,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener, ChangeLi
                                         .addComponent(jScrollPane2))
                                 .addGap(0, 0, 0)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane3, GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                         .addComponent(jScrollPane4))
                                 .addGap(0, 0, 0))
         );
@@ -173,7 +164,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener, ChangeLi
      * @param lexemesTokens
      */
     public void setLexemesTokens(HashMap<String, String> lexemesTokens) {
-        lexemesTokensTableModel.setDataVector(null, columnIdentifiers);
+        lexemesTokensTableModel.setDataVector(null, LEXEMES_TOKENS_TABLE_HEADERS);
 
         Iterator iterator = lexemesTokens.entrySet().iterator(); //Format [KEY1=VALUE1, KEY2=VALUE2, ...]
 
@@ -185,6 +176,25 @@ public class GUI extends JFrame implements ActionListener, KeyListener, ChangeLi
     }
 
     /**
+     * Displays the lexemes in the editor
+     * @param variables
+     */
+    public void setVariables(HashMap<String, Variable> variables) {
+        Variable a;
+        Object[] row = new Object[3];
+
+        variablesTableModel.setDataVector(null, VARIABLES_TABLE_HEADERS);
+
+        Iterator iterator = variables.entrySet().iterator(); //Format [KEY1=VALUE1, KEY2=VALUE2, ...]
+
+        while(iterator.hasNext()) {
+            a = variables.get(iterator.next().toString().split("=")[0]);
+            row[0] = a.getName(); row[1] = a.getType(); row[2] = a.getValue();
+            variablesTableModel.addRow(row);
+        }
+    }
+
+    /**
      * Displays a save file dialog
      */
     private void showSaveDialog() {
@@ -192,7 +202,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener, ChangeLi
         res = JOptionPane.showConfirmDialog(this, "Do You Want to Save Changes", "File Exit", JOptionPane.YES_NO_CANCEL_OPTION);
         if(res == JOptionPane.YES_OPTION)
         {
-            fileHandler.fileSave();
+            menu.save.doClick();
         }
         else if(res == JOptionPane.CANCEL_OPTION)
         {
@@ -202,6 +212,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener, ChangeLi
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList jList1;
     private javax.swing.JTable lexemesTokensTable;
+    private javax.swing.JTable variablesTable;
     private javax.swing.JList jList3;
     public javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JScrollPane jScrollPane2;

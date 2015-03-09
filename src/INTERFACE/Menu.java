@@ -4,8 +4,8 @@ package INTERFACE;/*
 */
 
 import FILES.FileHandler;
-import COMPILER.Compiler;
 import FILES.IOLFile;
+import COMPILER.Compiler;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -20,14 +20,15 @@ import java.awt.event.ActionEvent;
  */
 public class Menu {
 
+/* GUI Menu Bar */
     private JMenuBar mbar;
-    /* Menubar tabs */
+/* Menubar tabs */
     public JMenu file, edit, run;
-    /* File Tab options */
+/* File Tab options */
     public JMenuItem newFile, exit, open, save, saveAs;
-    /* Edit Tab options */
+/* Edit Tab options */
     public JMenuItem cut , copy, paste, selall, del;
-    /* Run Tab options */
+/* Run Tab options */
     public JMenuItem compile, compileExecute, execute;
 
     private GUI gui;
@@ -53,7 +54,9 @@ public class Menu {
         initEditTab();
         initRunTab();
 
+    /* associate menu bar to gui */
         gui.setJMenuBar(mbar);
+    /* set gui visible only after menu bar is set */
         gui.setVisible(true);
     }
 
@@ -157,6 +160,11 @@ public class Menu {
         mbar.add(run);
     }
 
+    /**
+     * File Tab ActionPerformed Listener
+     * @param e
+     * @return true if action belongs to file tab
+     */
     public boolean fileTabActionListener(ActionEvent e) {
         if(e.getSource().equals(newFile))
         {
@@ -167,8 +175,10 @@ public class Menu {
         else if(e.getSource().equals(open))
         {
             currentFile = fileHandler.fileOpen();
-            //check if error occured
+
+            //check if no error occured
             if (!currentFile.equals(null)) {
+                //check if selected file isn't already opened in IDE
                 if (!gui.IOLFiles.contains(currentFile))
                     addCurrentFile(currentFile);
                 prepareCurrentFile(currentFile);
@@ -179,7 +189,7 @@ public class Menu {
             IOLFile savedAsFile = fileHandler.fileSave();
 
            try {
-               savedAsFile.equals(null); //check if null, throws exception to catch if null
+               savedAsFile.equals(null); //check if null, throws exception to catch segment if null
                addCurrentFile(savedAsFile);
                prepareCurrentFile(savedAsFile);
                setCurrentFile(savedAsFile);
@@ -210,26 +220,31 @@ public class Menu {
         return true;
     }
 
+    /**
+     * Edit Tab ActionPerformed Listener
+     * @param e
+     * @return true if action belongs to file tab
+     */
     public boolean editTabActionListener(ActionEvent e) {
         if(e.getSource().equals(cut) )
         {
-            gui.textEditor.cut();
+            currentFile.textEditor.cut();
         }
         else if(e.getSource().equals(copy))
         {
-            gui.textEditor.copy();
+            currentFile.textEditor.copy();
         }
         else if(e.getSource().equals(paste))
         {
-            gui.textEditor.paste();
+            currentFile.textEditor.paste();
         }
         else if(e.getSource().equals(selall))
         {
-            gui.textEditor.selectAll();
+            currentFile.textEditor.selectAll();
         }
         else if(e.getSource().equals(del))
         {
-            gui.textEditor.replaceSelection("");
+            currentFile.textEditor.replaceSelection("");
         } else {
             return false;
         }
@@ -237,6 +252,10 @@ public class Menu {
         return true;
     }
 
+    /**
+     * Run Tab ActionPerformed Listener
+     * @param e
+     */
     public void runTabActionListener(ActionEvent e) {
         if (e.getSource().equals(compile)) {
             //save file if modified
@@ -248,6 +267,7 @@ public class Menu {
                 compiler.setFile(currentFile);
                 compiler.start();
                 gui.setLexemesTokens(compiler.getLexemesTokens());
+                gui.setVariables(compiler.getVariables());
             }
 
         } else if (e.getSource().equals(compileExecute)) {
@@ -266,18 +286,35 @@ public class Menu {
         }
     }
 
+    /**
+     * Adds keylistener to currentFile's textEditor
+     * Sets focus on the current file in the tabbed pane
+     * @param currentFile
+     */
     private void prepareCurrentFile(IOLFile currentFile) {
-        currentFile.textEditor.addKeyListener(gui); //set keylistener to gui keylisteners
-        gui.jTabbedPane.setSelectedIndex(currentFile.getIndex()); //focus newly created/opened file file
+    /* set keylistener to gui keylisteners */
+        currentFile.textEditor.addKeyListener(gui);
+    /* focus newly created/opened file */
+        gui.jTabbedPane.setSelectedIndex(currentFile.getIndex());
     }
 
+    /**
+     * Adds the currentFile to IOLFiles array list
+     * Adds the currentFile's textEditor to tabbed pane
+     * @param currentFile
+     */
     private void addCurrentFile(IOLFile currentFile) {
-        gui.IOLFiles.add(currentFile); //add new IOLFile to IOLFiles arraylist
-        gui.jTabbedPane.add(currentFile.getFilename(), currentFile.getTextEditor()); //add text editor to tabs
+    /* add new IOLFile to IOLFiles arraylist */
+        gui.IOLFiles.add(currentFile);
+    /* add text editor to tabs */
+        gui.jTabbedPane.add(currentFile.getFilename(), currentFile.getTextEditor());
     }
 
+    /**
+     * Setter method for current file
+     * @param currentFile
+     */
     public void setCurrentFile(IOLFile currentFile) {
-        System.out.println(currentFile.getIndex());
         this.currentFile = currentFile;
         fileHandler.setCurrentFile(currentFile);
         compiler.setFile(currentFile);

@@ -25,6 +25,7 @@ public class Compiler {
 
     public Compiler() {
         lexemesTokens = new HashMap<String, String>();
+        variables = new HashMap<String, Variable>();
 
         lex = new LexicalAnalyzer(lexemesTokens, variables);
         syn = new SyntaxAnalyzer();
@@ -41,6 +42,10 @@ public class Compiler {
 
     public HashMap<String, String> getLexemesTokens() {
         return lexemesTokens;
+    }
+
+    public HashMap<String, Variable> getVariables() {
+        return variables;
     }
 
     public void setFile(IOLFile currentFile) {

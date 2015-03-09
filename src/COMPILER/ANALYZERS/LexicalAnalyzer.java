@@ -42,6 +42,7 @@ public class LexicalAnalyzer {
             //TODO for gab
             //TODO determine if lexeme is a variable, if yes then determine what type of variable
             //TODO put variable to variables hash map
+                variables.put(lexemes[i], new Variable(lexemes[i], null, null));
                 // sample: variables.put(lexemes[i], new Variable(lexemes[i], <type>, <initial value>))
             //note: variable type is lexemes[i-1] and initial value is lexemes[i+2]
             //                  i-1   i      i+2

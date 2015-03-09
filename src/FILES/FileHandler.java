@@ -31,8 +31,7 @@ public class FileHandler {
     /**
      * Method called when user wants to open a file
      */
-    public IOLFile fileOpen()
-    {
+    public IOLFile fileOpen() {
         currentFile = new IOLFile();
         
         JFileChooser jfc = new JFileChooser();
@@ -88,8 +87,7 @@ public class FileHandler {
     /**
      * Method called when user decides to save changes done to currently opened file
      */
-    public IOLFile fileSave()
-    {
+    public IOLFile fileSave() {
         if(currentFile.getFilename().equals("New File"))
         {
             return fileSaveAs();
@@ -103,14 +101,18 @@ public class FileHandler {
         return null;
     }
 
+    /**
+     * Opens a saveAs dialog and lets user choose directory to save to
+     * @return
+     */
     public IOLFile fileSaveAs() {
-        JFileChooser jfc = new JFileChooser();
-        jfc.setFileSelectionMode(jfc.DIRECTORIES_ONLY);
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(fileChooser.DIRECTORIES_ONLY);
 
-        int res = jfc.showSaveDialog(gui);
-        if(res == jfc.APPROVE_OPTION)
+        int res = fileChooser.showSaveDialog(gui);
+        if(res == fileChooser.APPROVE_OPTION)
         {
-            File f = jfc.getSelectedFile();
+            File f = fileChooser.getSelectedFile();
 
             //check if saveAs filename is opened in IDE
             if (fileExistsInArrayList(f.getAbsolutePath()) == -1) {
@@ -119,11 +121,7 @@ public class FileHandler {
                 return currentFile;
             }
             else { //prompt user that file is opened in IDE
-                JOptionPane.showMessageDialog
-                        (
-                                gui , "File is opened in IDE. Try saving with a different filename" , "File SaveAs Error",
-                                JOptionPane.ERROR_MESSAGE
-                        );
+                showFileErrorDialog("File is opened in IDE. Try saving with a different filename");
             }
 
         }
@@ -134,12 +132,10 @@ public class FileHandler {
     /**
      * Method called within fileSave(), overwrites the existing file in file directory
      */
-    public void fileWrite()
-    {
+    public void fileWrite() {
         try
         {
             FileWriter fw = new FileWriter(currentFile.getPath());
-
             fw.write(currentFile.textEditor.getText());
             fw.flush();
             fw.close();
@@ -147,11 +143,7 @@ public class FileHandler {
         }
         catch(IOException e)
         {
-            JOptionPane.showMessageDialog
-                    (
-                            gui , e.getMessage() , "File Save Error",
-                            JOptionPane.ERROR_MESSAGE
-                    );
+            showFileErrorDialog(e.getMessage());
         }
 
     }
@@ -159,8 +151,7 @@ public class FileHandler {
     /**
      * Method called when user decides to exit IDE
      */
-    public void fileExit()
-    {
+    public void fileExit() {
         if(currentFile.isModified())
         {
             int res;
@@ -190,7 +181,23 @@ public class FileHandler {
         return -1;
     }
 
+    /**
+     * Setter for currentFile
+     * @param currentFile
+     */
     public void setCurrentFile(IOLFile currentFile) {
         this.currentFile = currentFile;
+    }
+
+    /**
+     * Display a dialog for possible errors during file operations
+     * @param message - message to display
+     */
+    private void showFileErrorDialog(String message) {
+        JOptionPane.showMessageDialog
+                (
+                        gui , message , "File SaveAs Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
     }
 }
